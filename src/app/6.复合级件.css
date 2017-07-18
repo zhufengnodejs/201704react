@@ -1,8 +1,10 @@
 .comment{
   display:flex;
+    flex-direction: column;
 }
 .comment .comment-user{
   display:flex;
+  flex-direction: column;
 }
 .comment .comment-user img{
   width:40px;
