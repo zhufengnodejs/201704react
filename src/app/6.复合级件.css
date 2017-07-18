@@ -1,0 +1,10 @@
+.comment{
+  display:flex;
+}
+.comment .comment-user{
+  display:flex;
+}
+.comment .comment-user img{
+  width:40px;
+  height:40px;
+}

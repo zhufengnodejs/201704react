@@ -10,7 +10,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // {name:"zfpx",color:"red"}
 function Welcome(props){
-  return <h1 style={{color:props.color}}>{props.name}</h1>
+  //Unknown prop `xxx` on <h1> tag. Remove this prop from the element
+  //React元素的属性名不能自定义，只能是DOM标签的真实属性
+  return <h1 tabIndex={1} style={{color:props.color}}>{props.name}</h1>
 }
 /**
  * 1. 当使用组件的时候和使用React元素用法基本一样
