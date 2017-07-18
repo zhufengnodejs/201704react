@@ -8,8 +8,9 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+// {name:"zfpx",color:"red"}
 function Welcome(props){
-   return <h1>{props.name}</h1>;
+  return <h1 style={{color:props.color}}>{props.name}</h1>
 }
 /**
  * 1. 当使用组件的时候和使用React元素用法基本一样
