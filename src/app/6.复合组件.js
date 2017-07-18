@@ -24,4 +24,4 @@ function Comment(props) {//{comment:}
 }
 let comment = {user:{avatar,username:'张三'},content:'今天天气真不错',date:new Date()};
 //...展示运算符，表示把comment对象的所有属性全部展开传递给Comment
-ReactDOM.render(<Comment {...comment}/>,document.querySelector('#root'));
+ReactDOM.render(<Comment user={{avatar,username:'张三'}} content='今天天气真不错' date={new Date()}/>,document.querySelector('#root'));
