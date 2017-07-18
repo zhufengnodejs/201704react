@@ -12,3 +12,8 @@ create-react-app app
 cd app
 npm start
 ```
+
+## react核心概念
+
+- 元素(elements)
+- 组件(components)
