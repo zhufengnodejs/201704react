@@ -25,9 +25,18 @@ let user = {
  *    style="background-color:blue"
  *    style应该等于一个JS对象
  *        属性名也要从-分隔的属性变成驼峰命名法
+ *        属性名也是驼峰命名法
+ * 3.属性的值或者用是字符串，用双引号包裹，如果是表达式用{}包裹，没有其它 写法，不能什么都不包
  */
 let style = {backgroundColor:'blue'};
-let hello = <h1 style={style} className="red"><span>{formatUser(user)}</span></h1>;
+/*let hello = <h1 tabIndex={1} style={style} className="red"><span>{formatUser(user)}</span></h1>;*/
+//Babel react
+/*let hello = React.createElement('h1',{
+  className:'red'
+},'hello');*/
+let str = '<h3>hello</h3>';
+let hello = <div dangerouslySetInnerHTML={{__html:str}}></div>
+
 ReactDOM.render(hello,document.querySelector('#root'));
 /*
 
