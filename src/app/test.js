@@ -1,25 +1,27 @@
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.getName = function () {
+  console.log(this.name);
+}
+//继续私有属性和公有属性
+function Student(name,age){
+  //构造函数中，this指向自己的实例 {}
+  Person.call(this,name);
+}
+Student.prototype = new Person();
 class Person {
-  constructor(name){
-    console.log('父类的constructor');
+  constructor(name) {
     this.name = name;
   }
-  getName(){console.log(this.name)}
+  getName(){
+    console.log(this.name);
+  }
 }
 class Student extends Person{
   constructor(name,age){
     super(name);
-    //如果想使用this,必须把使用this的代码放在super下面
-    console.log('this.name',this.name);
-    this.age = age
-    console.log('子类的constructor');
-  }
+    //构造函数中，this指向自己的实例 {}
+    //Person.call(this,name);
 }
-
-function Student(name,age){
-  Person.call(this,name);
 }
-let s = new Student('zfpx',8);
-console.log(s.getName());
-/*function Person(name){
-  this.name = name;
-}*/
