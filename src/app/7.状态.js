@@ -19,6 +19,9 @@ import ReactDOM from 'react-dom';
  *  4. 把React元素转变成真实的DOM元素并插入到页面中
  */
 class Clock extends React.Component{
+  componentWillUnmount(){
+    console.log('Clock componentWillUnmount');
+  }
   render(){
     return (
       <div>
@@ -44,8 +47,11 @@ class ClockApp extends React.Component{
       //用一个新的状态对象来更新状态
       //setState 1.用新状态替换老状态 2. 会重新调用render方法进行渲染视图
       //this.state = {date:new Date().toLocaleString()};
-      this.setState({count:this.state.count+1,
-        date:new Date().toLocaleString()});
+     let before = this.state.count;
+     //setState修改前和修改后不一定会改变 setState是异步操作
+      //setState不是简单的同步异步
+     this.setState({count:this.state.count+1});
+     console.log('修改',before,this.state.count);
     },1000);
   }
   //组件装载完成之后 当我们第一次把一个组件(组件内的React元素)转成真实的DOM结构并且插入到容器内部这后会自动调用此方法
@@ -54,13 +60,14 @@ class ClockApp extends React.Component{
   }
   //组件将要从页面中移除的时候执行此函数
   componentWillUnmount(){
+    console.log('componentWillUnmount');
     clearInterval(this.timer)
   }
   render(){
     return (
       <div>
         <p>{this.state.count}</p>
-        <Clock date={this.state.date}/>
+        {this.state.count<10?<Clock date={this.state.date}/>:null}
       </div>
     )
   }
