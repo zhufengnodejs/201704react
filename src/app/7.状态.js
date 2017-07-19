@@ -22,7 +22,8 @@ class Clock extends React.Component{
   //第个类都有一个构造函数，在构造函数里可以初始化私有属性 super指向是父类的构造函数
   constructor(props){
     //在子类的构造函数中，必须先调用父类的构造函数
-    super(props);//super指向是父类的构造函数
+    this.props = props;
+    //super(props);//super指向是父类的构造函数
     // this props = props this是当前实例
   }
   render(){

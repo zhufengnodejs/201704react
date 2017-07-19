@@ -14,6 +14,10 @@ class Student extends Person{
     console.log('子类的constructor');
   }
 }
+
+function Student(name,age){
+  Person.call(this,name);
+}
 let s = new Student('zfpx',8);
 console.log(s.getName());
 /*function Person(name){
