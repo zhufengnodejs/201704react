@@ -64,12 +64,21 @@ class ClockApp extends React.Component{
     clearInterval(this.timer)
   }
   render(){
-    return (
-      <div>
-        <p>{this.state.count}</p>
-        {this.state.count<10?<Clock date={this.state.date}/>:null}
-      </div>
-    )
+    if(this.state.count<10){
+      return (
+        <div>
+          <p>{this.state.count}</p>
+          <Clock date={this.state.date}/>
+        </div>
+      )
+    }else{
+      return (
+        <div>
+          <p>{this.state.count}</p>
+        </div>
+      )
+    }
+
   }
 }
 /**
