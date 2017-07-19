@@ -70,4 +70,4 @@ class ClockApp extends React.Component{
  * 2. 执行Clock函数并把props对象传入，返回一个React元素
  * 3. 把此React元素转成真实DOM并插入容器内部
  */
-ReactDOM.render(<Clock/>,document.querySelector('#root'));
+ReactDOM.render(<ClockApp/>,document.querySelector('#root'));
