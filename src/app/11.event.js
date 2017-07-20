@@ -13,15 +13,16 @@ class Form extends React.Component {
     let password = this.password.value;
     console.log(username,password);
   }
+  giveRef = xxx=>
+    this.password=xxx
   render() {
     //ref=reference引用名,那么可以通过这个引用名得到这个input框的真实DOM
     //ref=函数 当此React元素转成真实的DOM元素并插入到页面中之后，会执行此箭头函数，ref就是真实的DOM元素
      return (
        <form onSubmit={this.handle}>
          用户名:<input ref="username" type="text" required={true}/><br/>
-         密码:<input  ref={xxx=>{
-         this.password=xxx;
-       }} type="text" required={true}/><br/>
+         密码:<input  ref={this.giveRef
+       } type="text" required={true}/><br/>
          <input type="submit"/>
        </form>
      )

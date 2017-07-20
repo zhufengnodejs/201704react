@@ -32,7 +32,7 @@ class Form extends React.Component{
   render(){
      return (
        <form onSubmit={this.handleSubmit}>
-         用户名 <input type="text" defaultValue="123" onChange={this.handleChange}/>
+         用户名 <input type="text" value={this.state.username}  onChange={this.handleChange}/>
          <button onClick={this.reset}>重置</button>
        </form>
      )
