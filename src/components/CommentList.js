@@ -6,8 +6,8 @@ export default class CommentList extends Component {
     return (
       <ul className="list-group">
         {
-          this.props.comments.map((comment, index) => (
-              <Comment key={comment.id} comment={comment}/>
+          this.props.comments.map((item, index) => (
+              <Comment key={item.id} comment={item}/>
           ))
         }
       </ul>
