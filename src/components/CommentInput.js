@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 export default class CommentInput extends Component {
   handleSubmit = (event)=>{
-    event.preventDefault();
-    let user = this.user.value;
-    let content = this.content.value;
-    this.props.addComment({user,content});
-    this.content.value = '';
+    event.preventDefault();//阻止默认提交事件,防止刷新页面
+    let user = this.user.value;//获得用户名
+    let content = this.content.value;//获得输入的内容
+    this.props.addComment({user,content});//增加一条新的评论
+    this.content.value = '';//清空内容输入框的内容
   }
   render() {
+    //this.user 是给当前组件的实例上增加一个自定义属性
+    //input是这个React元素对应的真实DOM元素
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
