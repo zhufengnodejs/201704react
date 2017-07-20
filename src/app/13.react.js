@@ -57,14 +57,13 @@ let obj1 = obj || {name:'zpfx'};*/
  * 2.箭头函数
  * 3. 自定义函数
  */
+let obj = new Object();
 class Counter extends React.Component{
   constructor(){
     super();
     this.age = 8;
   }
-  getAge = ()=>{
-    this.age += 10;
-  }
+  home = function(){}
   handleClick(){
     //箭头函数中的this指向当前组件的实例
     console.log(this.age);
@@ -78,4 +77,7 @@ class Counter extends React.Component{
     )
   }
 }
+let c1 = new Counter();
+let c2 = new Counter()
+console.log(c1.home === c2.home);
 ReactDOM.render(<Counter/>,document.querySelector('#root'));

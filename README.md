@@ -17,3 +17,9 @@ npm start
 
 - 元素(elements)
 - 组件(components)
+
+## 参考网址
+- [react中文文档](http://www.css88.com/react/)
+- [redux](http://www.redux.org.cn/)
+- [react-router](https://reacttraining.cn/)
+- [React小书](https://scriptoj.com)
