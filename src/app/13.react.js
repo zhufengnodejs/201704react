@@ -63,7 +63,7 @@ class Counter extends React.Component{
     super();
     this.age = 8;
   }
-  home = function(){}
+  home = obj
   handleClick(){
     //箭头函数中的this指向当前组件的实例
     console.log(this.age);
