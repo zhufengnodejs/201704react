@@ -13,9 +13,13 @@ import ReactDOM from 'react-dom';
 
 /**
  * 在类中定义变量
- * 1.类里能写构造函数
- * 2.可以自定义的方法。
+ * 1.类里能写构造函数 构造函数里放的是私有属性
+ * 2.可以自定义的方法 自定义就属于公有的，所有的实例共享此方法
+ * 3. age = new Object() 可以给实例增加属性
+ * 4. static age = new Object() 可以给类增加属性  Animal.age
+ *
  **/
+/*
 class Animal{
  constructor(name){
    console.log('Animal constructor');
@@ -30,7 +34,7 @@ class Person extends Animal{
   }
   //这是一个试验证性的ES7高级语法
   handleClick = ()=>{}
-  age = '8'
+  static age = new Object()
   getAge = ()=>{
     console.log(this.age)
   }
@@ -39,5 +43,39 @@ class Person extends Animal{
       console.log(super.getName());
   }
 }
-let p = new Person('zfpx');
-console.log(p.getAge());
+let p1 = new Person('zfpx');
+let p2 = new Person('zfpx');
+console.log(Person.age);*/
+
+
+/*
+let obj = {};
+let obj1 = obj || {name:'zpfx'};*/
+/**
+ * 解决this指向的三种方法
+ * 1.bind
+ * 2.箭头函数
+ * 3. 自定义函数
+ */
+class Counter extends React.Component{
+  constructor(){
+    super();
+    this.age = 8;
+  }
+  getAge = ()=>{
+    this.age += 10;
+  }
+  handleClick(){
+    //箭头函数中的this指向当前组件的实例
+    console.log(this.age);
+  }
+  render(){//render和生命周期函数里的this都指向当前组件的实例
+    return (
+      <div>
+        <p></p>
+        <button onClick={this.getAge}>+</button>
+      </div>
+    )
+  }
+}
+ReactDOM.render(<Counter/>,document.querySelector('#root'));
